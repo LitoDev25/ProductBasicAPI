@@ -10,7 +10,7 @@
 |- User Name: sa
 |- senha: 123456
 
-#Requests
+# Requests
 |- Store:   Post   => /products 
 |- Show:    Get    => /products/:id 
 |= Index:   Get    => /products 
