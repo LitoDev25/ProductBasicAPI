@@ -9,3 +9,11 @@
 |- JDBC URL: jdbc:h2:mem:products
 |- User Name: sa
 |- senha: 123456
+
+#Requests
+|- Store:   Post   => /products 
+|- Show:    Get    => /products/:id 
+|= Index:   Get    => /products 
+|- Search:  Get    => /products/search?name 
+|- Update:  Put    => /products/:id
+|- Delete:  delete => /products|:id
