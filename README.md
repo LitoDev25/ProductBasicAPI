@@ -4,7 +4,7 @@
 >Aplicação rais roda em http://localhost:8080 (Padrão TomCat).
 
 # Banco de dados usado
-|- Banco de dados H2, usado apenas para testes.
+|- Banco de dados H2, usado apenas para testes( Não persiste os dados ).
 |- Acesso ao console H2: http://localhost:8080/h2-console
 |- JDBC URL: jdbc:h2:mem:products
 |- User Name: sa
