@@ -1,5 +1,6 @@
 package site.litodev.productsapi.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import site.litodev.productsapi.model.Product;
 import site.litodev.productsapi.service.ProductService;
@@ -37,12 +38,12 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public String update(@PathVariable("id") String id, @RequestBody Product product) {
+    public ResponseEntity<String> update(@PathVariable("id") String id, @RequestBody Product product) {
         return productService.updateProduct(id, product);
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") String id) {
+    public ResponseEntity<String> delete(@PathVariable("id") String id) {
         return productService.deleteProduct(id);
     }
 }

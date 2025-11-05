@@ -1,5 +1,6 @@
 package site.litodev.productsapi.service;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import site.litodev.productsapi.model.Product;
 import site.litodev.productsapi.repository.ProductRepository;
@@ -34,14 +35,14 @@ public class ProductService {
         return productRepository.findByName(name);
     }
 
-    public String updateProduct(String id, Product product) {
+    public ResponseEntity<String> updateProduct(String id, Product product) {
         product.setId(id);
         productRepository.save(product);
-        return "Produto Atualizado com sucesso!";
+        return (ResponseEntity<String>) ResponseEntity.ok("Produto Atualizado com sucesso!");
     }
 
-    public String deleteProduct(String id) {
+    public ResponseEntity<String> deleteProduct(String id) {
         productRepository.deleteById(id);
-        return "Produto Deletado com sucesso!";
+        return (ResponseEntity<String>) ResponseEntity.ok("Produto Deletado com sucesso!");
     }
 }

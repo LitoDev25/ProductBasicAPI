@@ -1,9 +1,8 @@
 package site.litodev.productsapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.springframework.beans.BeanUtils;
+import site.litodev.productsapi.dto.ProductDTO;
 
 // POJO -> Plain Old Java Object
 
@@ -12,6 +11,7 @@ import jakarta.persistence.Table;
 public class Product {
     @Id
     @Column(name = "id")
+    @GeneratedValue
     private String id;
 
     @Column(name = "name")
@@ -22,6 +22,12 @@ public class Product {
 
     @Column(name = "price")
     private Double price;
+
+    public Product(ProductDTO product) {
+        BeanUtils.copyProperties(product, this);
+    }
+
+    public Product() {}
 
     public String getId() {
         return id;
